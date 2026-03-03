@@ -211,26 +211,62 @@ h3, h4, h5, h6 {
 }
 
 /* =========================
-   Footer Styling (custom footer block in layout.html)
+   Turtini Institutional Footer
    ========================= */
-.turtini-footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 18px 24px;
-  border-top: 1px solid var(--turtini-border);
-  font-size: 0.85rem;
-  color: var(--turtini-text-muted);
-  line-height: 1.6;
+
+.turtini-footer{
+  background: linear-gradient(180deg,#7bb6c7,#9fd1df);
+  color:#ffffff;
+  font-size:14px;
+  padding:24px 40px;
+  margin-top:60px;
 }
 
-.turtini-footer .last-updated {
-  color: var(--turtini-text-muted-2);
+.turtini-footer-inner{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+  flex-wrap:wrap;
 }
 
-/* Optional spacing polish if you wrap footer inside .turtini-footer */
-.turtini-footer {
-  margin-top: 28px;
-  padding-top: 18px;
+.turtini-footer-left{
+  max-width:640px;
+}
+
+.turtini-footer-left div{
+  margin-bottom:6px;
+}
+
+.turtini-footer-right{
+  text-align:right;
+}
+
+.turtini-footer-right a{
+  color:#ffffff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.turtini-footer-right a:hover{
+  text-decoration:underline;
+}
+
+/* Mobile friendliness */
+
+@media (max-width:768px){
+
+  .turtini-footer-inner{
+    flex-direction:column;
+    text-align:left;
+  }
+
+  .turtini-footer-right{
+    text-align:left;
+    margin-top:10px;
+  }
+
 }
 
 /* =========================
