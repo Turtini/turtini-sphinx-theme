@@ -331,3 +331,12 @@ h3, h4, h5, h6 {
 .rst-content h2{font-size:22px;border-bottom:1px solid #e5e7eb;padding-bottom:10px;}
 .rst-content a{color:#2563eb;text-decoration:none;}
 .rst-content a:hover{text-decoration:underline;}
+
+/* Fix RTD "floating" footer caused by floated prev/next buttons */
+.rst-footer-buttons { clear: both; }
+.turtini-footer{
+  clear: both;
+  display: block;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
