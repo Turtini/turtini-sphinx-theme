@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turtini-sphinx-theme"
+version = "0.1.0"
+description = "Shared Sphinx templates and static assets for Turtini Read the Docs projects."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "Turtini LLC" }]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+turtini_sphinx_theme = ["_static/*", "_templates/*"]
