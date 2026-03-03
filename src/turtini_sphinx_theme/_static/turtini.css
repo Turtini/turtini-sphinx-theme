@@ -360,3 +360,21 @@ h3, h4, h5, h6 {
   clear: both !important;
   width: 100% !important;
 }
+
+/* --- FULL-BLEED footer (prevents the weird right-gutter "floating" look) --- */
+.turtini-footer{
+  box-sizing: border-box;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  float: none !important;
+  clear: both !important;
+  display: block !important;
+}
+
+/* Hide RTD default footer text/branding lines */
+.rst-content footer p,
+.rst-content footer small,
+.rst-content footer .rst-footer-buttons{
+  display: none !important;
+}
