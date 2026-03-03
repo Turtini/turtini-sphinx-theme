@@ -51,11 +51,36 @@
    Footer
    ============================ #}
 {% block footer %}
-  {{ super() }}
+  {# Remove super() so RTD’s default footer never renders #}
 
   <div class="turtini-footer">
-    © {{ turtini_year }} Turtini LLC<br>
-    Official federal plain-language documentation<br>
-    <span class="last-updated">Last updated: {{ last_updated }}</span>
+    <div class="turtini-footer-inner">
+
+      <div class="turtini-footer-left">
+        <div>Copyright © {{ turtini_year }} Turtini LLC ® All Rights Reserved. Various Trademarks Held by their Owners.</div>
+        <div>Turtini is a remote-first workplace and a member of the Assembly Norfolk Campus</div>
+        <div>400 Granby Street, Norfolk, VA 23510</div>
+      </div>
+
+      <div class="turtini-footer-right">
+        <div>
+          <a href="https://turtini.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+          &nbsp;|&nbsp;
+          <a href="https://turtini.com/terms-and-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+        </div>
+        <div>
+          <a href="https://turtini.com/ethics" target="_blank" rel="noopener">Ethics &amp; Integrity Statement</a>
+          &nbsp;|&nbsp;
+          <a href="https://turtini.com/security" target="_blank" rel="noopener">Security &amp; Data Governance</a>
+        </div>
+        <div>
+          <a href="https://trident.turtini.com/login" target="_blank" rel="noopener">Trident Login</a>
+          &nbsp;|&nbsp;
+          <a href="https://reef.turtini.com/login" target="_blank" rel="noopener">Reef Login</a>
+        </div>
+      </div>
+
+    </div>
   </div>
+{% endblock %}
 {% endblock %}
