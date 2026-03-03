@@ -3,7 +3,7 @@
 {% block extrahead %}
   {{ super() }}
   <link rel="icon" type="image/x-icon" href="{{ pathto('_static/favicon.ico', 1) }}">
-{% endblock %}
+{% endblock extrahead %}
 
 {# ============================
    Top global header (full-width, sticky)
@@ -15,12 +15,13 @@
     <div class="turtini-header-inner">
       <div class="turtini-header-right">
         <a href="https://turtini.com/" target="_blank" rel="noopener">Turtini</a>
+        <a href="https://docs.turtini.com/" rel="noopener">Docs</a>
         <a href="https://turtini.com/events" target="_blank" rel="noopener">Events</a>
         <a href="https://trident.turtini.com/login" target="_blank" rel="noopener">Trident</a>
       </div>
     </div>
   </div>
-{% endblock %}
+{% endblock extrabody %}
 
 {# ============================
    Sidebar title/home link override
@@ -30,9 +31,8 @@
   <a href="https://docs.turtini.com/" class="icon icon-home">
     {{ project }}
   </a>
-
   {{ super() }}
-{% endblock %}
+{% endblock sidebartitle %}
 
 {# ============================
    Banner inside the content area (under breadcrumbs)
@@ -43,7 +43,7 @@
   </div>
 
   {{ super() }}
-{% endblock %}
+{% endblock content %}
 
 {# ============================
    Footer
@@ -78,4 +78,4 @@
 
     </div>
   </div>
-{% endblock %}
+{% endblock footer %}
