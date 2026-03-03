@@ -340,3 +340,23 @@ h3, h4, h5, h6 {
   width: 100vw;
   margin-left: calc(50% - 50vw);
 }
+
+/* Force RTD footer area to be normal flow (fixes "floating" right-column footer) */
+.rst-content footer,
+.wy-nav-content footer{
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+.rst-footer-buttons{
+  float: none !important;
+  clear: both !important;
+}
+
+.turtini-footer{
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+}
