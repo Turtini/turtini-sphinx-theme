@@ -316,3 +316,18 @@ h3, h4, h5, h6 {
   color: #99d8e9;
   text-decoration: underline;
 }
+
+/* Hide the default RTD footer lines */
+.rst-content footer p,
+.rst-content footer .last-updated,
+.rst-content footer .commit,
+.rst-content footer .copyright {
+  display: none !important;
+}
+
+.wy-nav-content{max-width:980px;padding:48px 56px;}
+.rst-content{font-size:16px;line-height:1.75;color:#111827;}
+.rst-content h1{font-size:34px;letter-spacing:-0.02em;}
+.rst-content h2{font-size:22px;border-bottom:1px solid #e5e7eb;padding-bottom:10px;}
+.rst-content a{color:#2563eb;text-decoration:none;}
+.rst-content a:hover{text-decoration:underline;}
