@@ -14,11 +14,10 @@
   <div class="turtini-global-header" role="navigation" aria-label="Turtini global navigation">
     <div class="turtini-header-inner">
       <div class="turtini-header-right">
-      <a href="https://turtini.com/" target="_blank" rel="noopener">Turtini</a>
-      <a href="https://docs.turtini.com/">Docs</a>
-      <a href="https://turtini.com/events" target="_blank" rel="noopener">Events</a>
-      <a href="https://trident.turtini.com/login" target="_blank" rel="noopener">Trident</a>
-</div>
+        <a href="https://turtini.com/" target="_blank" rel="noopener">Turtini</a>
+        <a href="https://turtini.com/events" target="_blank" rel="noopener">Events</a>
+        <a href="https://trident.turtini.com/login" target="_blank" rel="noopener">Trident</a>
+      </div>
     </div>
   </div>
 {% endblock %}
@@ -32,7 +31,6 @@
     {{ project }}
   </a>
 
-  {# Keep version/language switchers + search box from the base theme #}
   {{ super() }}
 {% endblock %}
 
@@ -51,8 +49,6 @@
    Footer
    ============================ #}
 {% block footer %}
-  {# Remove super() so RTD’s default footer never renders #}
-
   <div class="turtini-footer">
     <div class="turtini-footer-inner">
 
@@ -82,5 +78,4 @@
 
     </div>
   </div>
-{% endblock %}
 {% endblock %}
