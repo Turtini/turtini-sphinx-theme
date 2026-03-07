@@ -15,7 +15,7 @@
     <div class="turtini-header-inner">
       <div class="turtini-header-right">
         <a href="https://turtini.com/" target="_blank" rel="noopener">Turtini</a>
-        <a href="https://docs.turtini.com/" rel="noopener">Docs</a>
+        <a href="https://docs.turtini.com/en/latest/" rel="noopener">Docs</a>
         <a href="https://turtini.com/events" target="_blank" rel="noopener">Events</a>
         <a href="https://trident.turtini.com/login" target="_blank" rel="noopener">Trident</a>
       </div>
@@ -28,14 +28,32 @@
    Always send users back to the docs hub
    ============================ #}
 {% block sidebartitle %}
-  <a href="https://docs.turtini.com/" class="icon icon-home">
+  <a href="https://docs.turtini.com/en/latest/" class="icon icon-home">
     {{ project }}
   </a>
   {{ super() }}
 {% endblock sidebartitle %}
 
 {# ============================
-   Banner inside the content area (under breadcrumbs)
+   Custom left sidebar links
+   Inserted into the main menu area so they appear
+   above the page/table-of-contents navigation
+   ============================ #}
+{% block menu %}
+  <div class="turtini-sidebar-links">
+    <a href="https://turtini.com/" target="_blank" rel="noopener">Turtini</a>
+    <a href="https://docs.turtini.com/en/latest/" rel="noopener">Docs</a>
+    <a href="https://turtini.github.io/" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://turtini.com/whitepapers" target="_blank" rel="noopener">White Papers</a>
+    <a href="https://turtini.com/events" target="_blank" rel="noopener">Events</a>
+    <a href="https://trident.turtini.com/login" target="_blank" rel="noopener">Trident</a>
+  </div>
+
+  {{ super() }}
+{% endblock menu %}
+
+{# ============================
+   Banner inside the content area
    ============================ #}
 {% block content %}
   <div class="turtini-banner" role="note" aria-label="Documentation notice">
