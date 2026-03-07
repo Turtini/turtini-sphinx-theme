@@ -378,3 +378,44 @@ h3, h4, h5, h6 {
 .rst-content footer .rst-footer-buttons{
   display: none !important;
 }
+
+/* Hide Read the Docs / EthicalAds sidebar ad blocks */
+.ethical-rtd,
+.ethical-sidebar,
+.ethical-footer,
+div[data-ea-publisher],
+div[data-ea-type],
+#ethical-ad-placement,
+.ethicalads,
+.sidebar-ethical-ads {
+  display: none !important;
+}
+
+/* Custom sidebar quick links */
+.turtini-sidebar-links {
+  margin: 12px 0 18px 0;
+}
+
+.turtini-sidebar-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.turtini-sidebar-links li {
+  margin: 0;
+  padding: 0;
+}
+
+.turtini-sidebar-links a {
+  display: block;
+  padding: 8px 14px;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.turtini-sidebar-links a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
