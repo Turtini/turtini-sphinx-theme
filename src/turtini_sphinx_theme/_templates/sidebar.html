@@ -1,20 +1,31 @@
-{# turtini-sphinx-theme/src/turtini_sphinx_theme/_templates/sidebar.html #}
+{# src/turtini_sphinx_theme/_templates/sidebar.html #}
+{% extends "!sidebar.html" %}
 
-{% extends "sidebar.html" %}
-
-{# Override the "home" link so logo/title always returns to docs hub #}
+{# Logo / title at top of sidebar #}
 {% block sidebarlogo %}
-<a href="https://docs.turtini.com/" class="icon icon-home">
-
+<a href="https://docs.turtini.com/en/latest/" class="icon icon-home">
   {% if logo %}
     <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ project }}" />
   {% endif %}
-
   {{ project }}
 </a>
 {% endblock %}
 
-{# Navigation tree only — removes Read the Docs ads block #}
+{# Custom global links under search #}
 {% block sidebartoc %}
+<div class="turtini-sidebar-links">
+  <ul>
+    <li><a href="https://turtini.com/" target="_blank" rel="noopener">Turtini</a></li>
+    <li><a href="https://docs.turtini.com/en/latest/">Docs</a></li>
+    <li><a href="https://turtini.github.io/" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://turtini.com/whitepapers" target="_blank" rel="noopener">White Papers</a></li>
+    <li><a href="https://turtini.com/events" target="_blank" rel="noopener">Events</a></li>
+    <li><a href="https://trident.turtini.com/login" target="_blank" rel="noopener">Trident</a></li>
+  </ul>
+</div>
+
 {{ super() }}
 {% endblock %}
+
+{# Remove RTD ad area completely #}
+{% block ethicalads %}{% endblock %}
