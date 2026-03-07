@@ -406,3 +406,11 @@ div[data-ea-type],
     padding: 32px 24px;
   }
 }
+
+/* Hide default Sphinx / RTD footer text everywhere */
+footer,
+.rst-content footer,
+.wy-nav-content footer,
+div[role="contentinfo"] {
+  display: none !important;
+}
