@@ -1,7 +1,6 @@
 {# src/turtini_sphinx_theme/_templates/sidebar.html #}
 {% extends "!sidebar.html" %}
 
-{# Logo / title at top of sidebar #}
 {% block sidebarlogo %}
 <a href="https://docs.turtini.com/en/latest/" class="icon icon-home">
   {% if logo %}
@@ -9,10 +8,7 @@
   {% endif %}
   {{ project }}
 </a>
-{% endblock %}
 
-{# Custom global links under search #}
-{% block sidebartoc %}
 <div class="turtini-sidebar-links">
   <ul>
     <li><a href="https://turtini.com/" target="_blank" rel="noopener">Turtini</a></li>
@@ -23,9 +19,8 @@
     <li><a href="https://trident.turtini.com/login" target="_blank" rel="noopener">Trident</a></li>
   </ul>
 </div>
-
-{{ super() }}
 {% endblock %}
 
-{# Remove RTD ad area completely #}
-{% block ethicalads %}{% endblock %}
+{% block menu %}
+  {{ super() }}
+{% endblock %}
