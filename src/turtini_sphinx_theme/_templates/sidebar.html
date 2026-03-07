@@ -1,13 +1,20 @@
-{# src/turtini_sphinx_theme/_templates/sidebar.html #}
-{% extends "!sidebar.html" %}
+{# turtini-sphinx-theme/src/turtini_sphinx_theme/_templates/sidebar.html #}
 
-{# Override the “home” link (logo/title) to always return to hub #}
-{% block sidebartitle %}
-  <a href="https://docs.turtini.com/" class="icon icon-home">
-    {# Show logo if configured #}
-    {% if logo %}
-      <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ project }}" />
-    {% endif %}
-    {{ project }}
-  </a>
+{% extends "sidebar.html" %}
+
+{# Override the "home" link so logo/title always returns to docs hub #}
+{% block sidebarlogo %}
+<a href="https://docs.turtini.com/" class="icon icon-home">
+
+  {% if logo %}
+    <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ project }}" />
+  {% endif %}
+
+  {{ project }}
+</a>
+{% endblock %}
+
+{# Navigation tree only — removes Read the Docs ads block #}
+{% block sidebartoc %}
+{{ super() }}
 {% endblock %}
