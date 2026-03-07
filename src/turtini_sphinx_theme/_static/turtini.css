@@ -11,12 +11,17 @@
   --turtini-border: #dbe3f5;      /* soft border */
   --turtini-text-muted: #4b5563;  /* footer text */
   --turtini-text-muted-2: #6b7280;
+  --turtini-header-height: 48px;
 }
 
 /* =========================
    Global Font Override (Arial-like)
    ========================= */
-html, body, .wy-body-for-nav, .wy-nav-side, .wy-breadcrumbs {
+html,
+body,
+.wy-body-for-nav,
+.wy-nav-side,
+.wy-breadcrumbs {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
 }
 
@@ -28,6 +33,69 @@ h1, h2, h3, h4, h5, h6 {
 .wy-body-for-nav p {
   line-height: 1.6;
   margin-bottom: 0.9em;
+}
+
+/* =========================
+   Fixed Global Top Header
+   ========================= */
+.turtini-global-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--turtini-header-height);
+  z-index: 2000;
+  background: var(--turtini-brand);
+  color: #fff;
+  width: 100%;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+
+.turtini-header-inner {
+  max-width: 1200px;
+  height: var(--turtini-header-height);
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.turtini-header-left {
+  display: none;
+}
+
+.turtini-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.turtini-global-header a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.turtini-global-header a:hover {
+  color: var(--turtini-hover);
+  text-decoration: underline;
+}
+
+/* Push the RTD layout down so the fixed header does not overlap content */
+.wy-nav-side {
+  padding-top: var(--turtini-header-height);
+}
+
+.wy-nav-content-wrap {
+  padding-top: var(--turtini-header-height);
+}
+
+.wy-nav-top {
+  top: var(--turtini-header-height);
+  background: var(--turtini-brand-dark) !important;
 }
 
 /* =========================
@@ -43,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Logo + search header area */
 .wy-side-nav-search {
   background: var(--turtini-brand) !important;
-  background-image: none !important; /* remove subtle overlay */
+  background-image: none !important;
 }
 
 /* Sidebar links */
@@ -63,11 +131,6 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255,255,255,0.08);
 }
 
-/* Top nav bar (mobile) */
-.wy-nav-top {
-  background: var(--turtini-brand-dark) !important;
-}
-
 /* =========================
    Links
    ========================= */
@@ -83,11 +146,9 @@ a:hover {
 /* =========================
    Content width
    ========================= */
-
-/* You previously had 1200px, then later changed to 920px.
-   Keeping 920px (cleaner reading). If you want wider, change to 1200px. */
 .wy-nav-content {
-  max-width: 920px;
+  max-width: 980px;
+  padding: 48px 56px;
 }
 
 /* =========================
@@ -106,7 +167,7 @@ h2 {
 }
 
 h3, h4, h5, h6 {
-  color: #1f3ea8; /* slightly darker for hierarchy */
+  color: #1f3ea8;
 }
 
 /* =========================
@@ -132,8 +193,7 @@ h3, h4, h5, h6 {
 }
 
 /* =========================
-   Banner / Notice (Ansible-style callout box)
-   Used for the “Notice: …” box near top of pages
+   Banner / Notice
    ========================= */
 .turtini-banner {
   margin: 14px 0 20px 0;
@@ -147,8 +207,6 @@ h3, h4, h5, h6 {
   line-height: 1.5;
 }
 
-/* If you ever want a sticky “banner bar” (different from notice box),
-   use this class on that element instead of .turtini-banner */
 .turtini-banner--sticky {
   position: sticky;
   top: 0;
@@ -171,198 +229,69 @@ h3, h4, h5, h6 {
 }
 
 /* =========================
-   Global Top Header (Ansible-like black bar)
+   Content typography polish
    ========================= */
-.turtini-global-header {
-  background: #000;
-  color: #fff;
-  width: 100%;
-  font-size: 0.9rem;
-  /* If you want it always visible while scrolling, uncomment:
-  position: sticky;
-  top: 0;
-  z-index: 2000;
-  */
+.rst-content {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #111827;
 }
 
-.turtini-header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.rst-content h1 {
+  font-size: 34px;
+  letter-spacing: -0.02em;
 }
 
-.turtini-global-header a {
-  color: #fff;
+.rst-content h2 {
+  font-size: 22px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.rst-content a {
+  color: #2563eb;
   text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
 }
 
-.turtini-global-header a:hover {
+.rst-content a:hover {
   text-decoration: underline;
 }
 
-.turtini-header-left a {
-  font-weight: 600;
-  letter-spacing: 0.4px;
-}
-
 /* =========================
-   Turtini Institutional Footer
+   Footer handling
    ========================= */
-
-.turtini-footer{
-  background: linear-gradient(180deg,#7bb6c7,#9fd1df);
-  color:#ffffff;
-  font-size:14px;
-  padding:24px 40px;
-  margin-top:60px;
-}
-
-.turtini-footer-inner{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  gap:40px;
-  flex-wrap:wrap;
-}
-
-.turtini-footer-left{
-  max-width:640px;
-}
-
-.turtini-footer-left div{
-  margin-bottom:6px;
-}
-
-.turtini-footer-right{
-  text-align:right;
-}
-
-.turtini-footer-right a{
-  color:#ffffff;
-  text-decoration:none;
-  font-weight:500;
-}
-
-.turtini-footer-right a:hover{
-  text-decoration:underline;
-}
-
-/* Mobile friendliness */
-
-@media (max-width:768px){
-
-  .turtini-footer-inner{
-    flex-direction:column;
-    text-align:left;
-  }
-
-  .turtini-footer-right{
-    text-align:left;
-    margin-top:10px;
-  }
-
-}
-
-/* =========================
-   Global Top Header (sticky + brand)
-   ========================= */
-
-.turtini-global-header{
-  position: sticky;
-  top: 0;
-  z-index: 2000;
-  background: #2a53cd;           /* Turtini blue */
-  color: #fff;
-  width: 100%;
-  font-size: 0.9rem;
-  border-bottom: 1px solid rgba(255,255,255,0.18);
-}
-
-/* Keep header content aligned with your doc width */
-.turtini-header-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 18px;
-  display: flex;
-  justify-content: flex-end;     /* push everything to the right */
-  align-items: center;
-  gap: 20px;                     /* spacing between links */
-}
-
-/* Hide the "left" slot so Turtini sits with Events/Trident */
-.turtini-header-left{
-  display: none;
-}
-
-.turtini-header-right{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.turtini-global-header a{
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.turtini-global-header a:hover{
-  color: #99d8e9;
-  text-decoration: underline;
-}
 
 /* Hide the default RTD footer lines */
 .rst-content footer p,
 .rst-content footer .last-updated,
 .rst-content footer .commit,
-.rst-content footer .copyright {
+.rst-content footer .copyright,
+.rst-content footer small,
+.rst-content footer .rst-footer-buttons {
   display: none !important;
 }
 
-.wy-nav-content{max-width:980px;padding:48px 56px;}
-.rst-content{font-size:16px;line-height:1.75;color:#111827;}
-.rst-content h1{font-size:34px;letter-spacing:-0.02em;}
-.rst-content h2{font-size:22px;border-bottom:1px solid #e5e7eb;padding-bottom:10px;}
-.rst-content a{color:#2563eb;text-decoration:none;}
-.rst-content a:hover{text-decoration:underline;}
-
-/* Fix RTD "floating" footer caused by floated prev/next buttons */
-.rst-footer-buttons { clear: both; }
-.turtini-footer{
+/* Fix RTD floating footer caused by floated prev/next buttons */
+.rst-footer-buttons {
   clear: both;
-  display: block;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  float: none !important;
 }
 
-/* Force RTD footer area to be normal flow (fixes "floating" right-column footer) */
 .rst-content footer,
-.wy-nav-content footer{
+.wy-nav-content footer {
   float: none !important;
   clear: both !important;
   width: 100% !important;
   display: block !important;
 }
 
-.rst-footer-buttons{
-  float: none !important;
-  clear: both !important;
-}
-
-.turtini-footer{
-  float: none !important;
-  clear: both !important;
-  width: 100% !important;
-}
-
-/* --- FULL-BLEED footer (prevents the weird right-gutter "floating" look) --- */
-.turtini-footer{
+/* Turtini footer */
+.turtini-footer {
+  background: linear-gradient(180deg,#7bb6c7,#9fd1df);
+  color: #ffffff;
+  font-size: 14px;
+  padding: 24px 40px;
+  margin-top: 60px;
   box-sizing: border-box;
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -372,14 +301,40 @@ h3, h4, h5, h6 {
   display: block !important;
 }
 
-/* Hide RTD default footer text/branding lines */
-.rst-content footer p,
-.rst-content footer small,
-.rst-content footer .rst-footer-buttons{
-  display: none !important;
+.turtini-footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* Hide Read the Docs / EthicalAds sidebar ad blocks */
+.turtini-footer-left {
+  max-width: 640px;
+}
+
+.turtini-footer-left div {
+  margin-bottom: 6px;
+}
+
+.turtini-footer-right {
+  text-align: right;
+}
+
+.turtini-footer-right a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.turtini-footer-right a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   Hide Read the Docs / EthicalAds
+   ========================= */
 .ethical-rtd,
 .ethical-sidebar,
 .ethical-footer,
@@ -391,7 +346,9 @@ div[data-ea-type],
   display: none !important;
 }
 
-/* Custom sidebar quick links */
+/* =========================
+   Custom sidebar quick links
+   ========================= */
 .turtini-sidebar-links {
   margin: 12px 0 18px 0;
 }
@@ -418,4 +375,34 @@ div[data-ea-type],
 
 .turtini-sidebar-links a:hover {
   background: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================
+   Mobile friendliness
+   ========================= */
+@media (max-width: 768px) {
+  .turtini-header-inner {
+    padding: 0 12px;
+    gap: 14px;
+  }
+
+  .turtini-header-right {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .turtini-footer-inner {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .turtini-footer-right {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .wy-nav-content {
+    padding: 32px 24px;
+  }
 }
