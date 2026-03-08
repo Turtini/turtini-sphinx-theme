@@ -414,3 +414,8 @@ footer,
 div[role="contentinfo"] {
   display: none !important;
 }
+
+/* Hide Read the Docs version badge */
+.rtd-versions {
+  display: none !important;
+}
