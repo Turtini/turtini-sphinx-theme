@@ -419,3 +419,11 @@ div[role="contentinfo"] {
 .rtd-versions {
   display: none !important;
 }
+
+/* Fix extra whitespace below mobile header */
+@media screen and (max-width: 768px) {
+  .wy-nav-content-wrap {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
